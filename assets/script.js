@@ -4,9 +4,26 @@ var passwordInput = document.getElementById('password');
 var emailInput = document.getElementById('email');
 
 var validationRules = {
-  name: [],
-  password: [],
-  email: [],
+  name: [{
+    validatorName: 'length',
+    props: {
+      max: 15,
+      min: 3,
+    }
+  },
+  {
+    validatorName: 'onlyLetters',
+  }],
+  password: [{
+    validatorName: 'length',
+    props: {
+      max: 15,
+      min: 6,
+    }
+  }],
+  email: [{
+    validatorName: 'isEmail'
+  }],
 };
 
 sendButton.onclick = function(event) {
@@ -17,8 +34,8 @@ sendButton.onclick = function(event) {
     email: emailInput.value,
   };
 
-  validator.initialize(validationRules);
-  validator.validate(fields);
+  // validator.initialize(validationRules);
+  // validator.validate(fields);
 
   if (validator.isValid) {
     event.preventDefault();
@@ -33,5 +50,5 @@ sendButton.onclick = function(event) {
 }
 
 function Validator() {
-
+  this.isValid = true;
 }
