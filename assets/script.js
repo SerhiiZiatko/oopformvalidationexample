@@ -27,6 +27,7 @@ var validationRules = {
 };
 
 sendButton.onclick = function(event) {
+  event.preventDefault();
   var validator = new Validator();
   var fields = {
     name: nameInput.value,
@@ -38,7 +39,6 @@ sendButton.onclick = function(event) {
   // validator.validate(fields);
 
   if (validator.isValid) {
-    event.preventDefault();
     alert('Данные сохранены!');
   } else {
     validator.errors.map(function(error) {
