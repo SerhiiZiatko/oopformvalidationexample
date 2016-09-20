@@ -10,20 +10,30 @@
     <p>
       Имя<br />
       <input id="name" type="text" />
+      <ul class="errors" id="nameErrors"></ul>
     </p>
     <p>
       Пароль<br />
       <input id="password" type="password" />
+      <ul class="errors" id="passwordErrors"></ul>
     </p>
     <p>
       email<br />
       <!--Конечно есть type="email", но в образовательных целях, мы сегодня забудем об этом-->
       <input id="email" type="text" />
+      <ul class="errors" id="emailErrors"></ul>
+    </p>
+    <p>
+      Номер телефона<br />
+      <!--Конечно есть type="email", но в образовательных целях, мы сегодня забудем об этом-->
+      <input id="phone" type="text" />
+      <ul class="errors" id="phoneErrors"></ul>
     </p>
     <button id="sendButton">
       Отправить
     </button>
   </form>
+  <div id="statusBar"></div>
   <script src="assets/script.js"></script>
 </body>
 </html>

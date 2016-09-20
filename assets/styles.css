@@ -5,3 +5,9 @@ form {
   border: 1px solid #bcbcbc;
   padding: 10px;
 }
+
+.errors {
+  color: red;
+  font-size: 12px;
+  list-style: none;
+}
